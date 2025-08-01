@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Learning Recommendation</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="brand-logo">
+        <img src="{% static 'images/logo.png' %}" alt="Logo">
+        <span>Learn Smarter</span>
+      </div>
+      <nav class="nav-links">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'login_user' %}">Login</a>
+        <a href="{% url 'about' %}">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <section class="welcome">
+      <h2 class="welcome-heading">What do you want to learn today?</h2>
+      <p>Type your interests, like “machine learning”, “poetry”, or “philosophy”, and we’ll show you books and videos to match.</p>
+    </section>
+
+    <section class="search-box">
+      <form method="get" action="{% url 'show_results' %}">
+        <input type="text" name="q" placeholder="e.g., Web Development" required>
+        <button type="submit">Get Recommendations</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+      &copy; 2025 PathFinder | Developed by Okpandu Dennis | Empowering your career journey.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,68 @@
+{% extends "index.html" %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+
+<div class="profile-page-container">
+    <!-- Left profile card -->
+    <div class="profile-left">
+        <div class="profile-card">
+            <div class="profile-image">
+                <img src="{{ user.profile.get_profile_picture_url }}" alt="{{ user.username }}'s Profile Picture">
+
+                <button class="add-btn" onclick="document.getElementById('uploadModal').style.display='block'">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+
+            <h2>{{ user.username }}</h2>
+            <p class="title">{{ profile.title|default:"No title set" }}</p>
+
+            <!-- Bio and location -->
+            <div class="bio-location">
+                <p><strong>Bio:</strong> {{ profile.bio|default:"No bio yet." }}</p>
+                <p><strong>Location:</strong> {{ profile.location|default:"Unknown" }}</p>
+            </div>
+
+            <a href="{% url 'edit_profile' %}" class="edit-profile-btn">Edit Profile</a>
+        </div>
+    </div>
+
+    <!-- Right side containers -->
+    <div class="profile-right">
+        <!-- Skills container -->
+        <div class="profile-card">
+            <h3>Skills</h3>
+            <div class="skills-list">
+                {% for skill in profile.skills|default:"No Skills Provided"|split:"," %}
+                    <span class="skill-tag">{{ skill }}</span>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Works Most With container -->
+        <div class="profile-card">
+            <h3>Works Most With</h3>
+            <p>Coming soon: similar users here...</p>
+        </div>
+    </div>
+</div>
+
+<!-- Upload Modal -->
+<div id="uploadModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="document.getElementById('uploadModal').style.display='none'">&times;</span>
+        <h3>Upload New Profile Picture</h3>
+        <form method="post" action="{% url 'update_profile_picture' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="profile_picture" accept="image/*" required>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

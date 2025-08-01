@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recommendations</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="brand-title">Results for "{{ query }}"</h1>
+      <nav class="nav-links">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'login_user' %}">Login</a>
+        <a href="{% url 'about' %}">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-container">
+
+    <!-- Book Recommendations -->
+    <section class="recommend-section">
+      <h2>📘 Recommended Books</h2>
+      {% if recommendations %}
+        <ul class="recommend-list">
+          {% for book in recommendations %}
+            <li>
+              {% if book.cover_url %}
+                <img src="{{ book.cover_url }}" alt="cover">
+              {% endif %}
+              <div>
+                <strong>{{ book.title }}</strong><br>
+                by {{ book.author }}<br>
+                {% if book.subjects %}
+                  <em>{{ book.subjects }}</em>
+                {% endif %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No book recommendations found.</p>
+      {% endif %}
+    </section>
+
+    <!-- Video Recommendations -->
+    <section class="recommend-section">
+      <h2>🎥 Recommended Videos</h2>
+      {% if videos %}
+        <ul class="recommend-list">
+          {% for video in videos %}
+            <li>
+              <img src="{{ video.thumbnail }}" alt="{{ video.title }}">
+              <div>
+                <a href="{{ video.video_url }}" target="_blank">
+                  <strong>{{ video.title }}</strong>
+                </a><br>
+                <p>by {{ video.channel }}</p>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No video recommendations found.</p>
+      {% endif %}
+    </section>
+
+    <footer>
+      &copy; 2025 PathFinder | Developed by Okpandu Dennis | Empowering your career journey.
+  </footer>
+
+  </main>
+</body>
+</html>

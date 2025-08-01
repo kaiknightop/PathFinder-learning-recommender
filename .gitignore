@@ -1,0 +1,35 @@
+# IDE files
+.vscode/
+.idea/
+# Media files (user-uploaded content only)
+profile_pics
+
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+.env
+# Virtual Environment
+env/
+venv/
+test/
+*.env
+*.log
+
+# Django
+db.sqlite3
+/staticfiles/
+media/
+
+# VS Code
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Node / npm (just in case)
+node_modules/
+
+# Render files
+*.sqlite3

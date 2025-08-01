@@ -1,0 +1,408 @@
+/* profile.css */
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.profile-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+}
+
+.profile-image {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #6C63FF;
+}
+
+.add-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #6C63FF;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn:hover {
+    background: #00C9A7;
+}
+
+/* Name and title */
+.profile-card h2 {
+    margin: 15px 0 5px;
+    color: #333;
+    font-size: 24px;
+}
+
+.title {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Skills section */
+.skills-section {
+    margin: 20px 0;
+}
+
+.skills-section h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.skill-tag {
+    background: #f0f0f0;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Similar users section */
+.similar-users-section {
+    margin: 20px 0;
+}
+
+.similar-users-section h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Bio and location */
+.bio-location {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.bio-location p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Edit profile button */
+.edit-profile-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #6C63FF;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-profile-btn:hover {
+    background-color: #00C9A7;
+    transform: translateY(-2px);
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+/* Responsive design */
+@media screen and (max-width: 480px) {
+    .profile-card {
+        padding: 25px 20px;
+    }
+
+    .profile-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-card h2 {
+        font-size: 20px;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
+    .skill-tag {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+
+    .edit-profile-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Layout for profile page with left and right columns */
+.profile-page-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+}
+
+/* Left container */
+.profile-left {
+    flex: 1 1 350px;
+    max-width: 500px;
+}
+
+/* Right containers stacked vertically */
+.profile-right {
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 55px;
+}
+
+
+/* === Profile Page - Media Queries Improvements === */
+
+/* Target very small devices (phones under 400px width) */
+@media screen and (max-width: 400px) {
+    .profile-card {
+        padding: 20px 15px;
+    }
+
+    .profile-image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .add-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .edit-profile-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .skill-tag {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+
+    .modal-content h3 {
+        font-size: 20px;
+    }
+
+    .modal-content button[type="submit"] {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
+
+/* Mid-size phones and tablets */
+@media screen and (max-width: 768px) {
+    .profile-page-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .profile-left, .profile-right {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .profile-card {
+        padding: 15px 5px;
+    }
+
+    .skills-list {
+        justify-content: flex-start;
+    }
+}
+
+/* Tablets to small laptops */
+@media screen and (max-width: 1024px) {
+    .profile-card {
+        padding: 15px 5px;
+    }
+
+    .modal-content {
+        max-width: 90%;
+    }
+}
+
+
+/*SOME INTERACTIVITY!!!!*/
+/* Interactive hover effect for profile image */
+.profile-image img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    border-color: #00C9A7;
+}
+
+/* Hover lift effect on profile cards */
+.profile-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Ensure add button also has smooth transition */
+.add-btn {
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.add-btn:hover {
+    background: #00C9A7;
+    transform: scale(1.1);
+}
+
+.no-skills {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease-out;
+}
+
+.modal-content h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+.modal-content input[type="file"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.modal-content button[type="submit"] {
+    background-color: #6C63FF;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #00C9A7;
+}
+
+.modal-content .close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-content .close:hover {
+    color: #000;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-30px);}
+    to {transform: translateY(0);}
+}
