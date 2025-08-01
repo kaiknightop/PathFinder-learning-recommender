@@ -52,6 +52,6 @@ Whether you're upskilling in AI, exploring Python, or diving into web developmen
 ![Results](app/screenshots/register.png)
 
 ### Mobile Home Page (Using Browser Inspect)
-![Results](app/screenshots/mobile_home.jpg)
+![Results](app/screenshots/mobile_home.png)
 
 
