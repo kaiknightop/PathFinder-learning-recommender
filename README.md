@@ -54,4 +54,22 @@ Whether you're upskilling in AI, exploring Python, or diving into web developmen
 ### Mobile Home Page (Using Browser Inspect)
 ![Results](app/screenshots/mobile_home.png)
 
+### Mobile Login Page (Using Browser Inspect)
+![Results](app/screenshots/mobile_login.png)
+
+### Mobile Register Page (Using Browser Inspect)
+![Results](app/screenshots/mobile_register.png)
+
+### Mobile About Page (Using Browser Inspect)
+![Results](app/screenshots/mobile_about.png)
+
+### Mobile Recommendation Page for books (Using Browser Inspect)
+![Results](app/screenshots/mobile_books.png)
+
+### Mobile Recommendation Page for videos (Using Browser Inspect)
+![Results](app/screenshots/mobile_videos.png)
+
+### Mobile Recommendation Page for videos (Using Browser Inspect)
+![Results](app/screenshots/mobile_videos_2.png)
+
 
