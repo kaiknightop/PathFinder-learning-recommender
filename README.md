@@ -39,4 +39,19 @@ Whether you're upskilling in AI, exploring Python, or diving into web developmen
 ### Recommendations Page(books)
 ![Results](app/screenshots/books.png)
 
+### Recommendations Page(videos)
+![Results](app/screenshots/videos.png)
+
+### About Page
+![Results](app/screenshots/about.png)
+
+### Login Page
+![Results](app/screenshots/login.png)
+
+### Register Page
+![Results](app/screenshots/register.png)
+
+### Mobile Home Page (Using Browser Inspect)
+![Results](app/screenshots/mobile_home.jpg)
+
 
