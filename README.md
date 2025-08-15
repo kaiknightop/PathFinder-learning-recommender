@@ -2,7 +2,7 @@
 
 PathFinder Learning Recommender is a personalized platform that suggests books and videos based on user interests, learning goals, or specific skills. Using intelligent filtering and vector search (via Pinecone), the system provides meaningful, tailored learning content for each user.
 
-Whether you're upskilling in AI, exploring Python, or diving into web development, PathFinder helps you find the best resources — fast.
+Whether you're upskilling in AI, exploring Python, or diving into web development, PathFinder helps you find the best resources and fast.
 
 
 ## 🧰 Tech Stack
